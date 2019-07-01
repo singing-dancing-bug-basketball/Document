@@ -6,13 +6,13 @@ Our organization is composed of four students who participating in the project t
 
 The specific requirements of this project are detailed in [Requirements](./哈尔滨工业大学软件开发项目训练.pdf)
 The project consists of three applications:
-+ [Android Client](../Android)
-+ [Web front end](../Server)
-+ [Web back end](../Server)
++ [Android Client](https://github.com/singing-dancing-bug-basketball/Android)
++ [Web front end](https://github.com/singing-dancing-bug-basketball/Server)
++ [Web back end](https://github.com/singing-dancing-bug-basketball/Server)
 
 #### Document
 
-+ [E-R diagram](./figure/ER_Diagram.svg)
++ [E-R diagram](#er_diagram)
 + [DataBase](./DataBase.md)
 + Definition of server's restful API
 
@@ -24,12 +24,15 @@ The project consists of three applications:
 
 本项目的具体要求详见[要求](./哈尔滨工业大学软件开发项目训练.pdf)
 项目由三个部分组成:
-+ [安卓客户端](../Android)
-+ [Web前端](../Server)
-+ [Web后端](../Server)
++ [安卓客户端](https://github.com/singing-dancing-bug-basketball/Android)
++ [Web前端](https://github.com/singing-dancing-bug-basketball/Server)
++ [Web后端](https://github.com/singing-dancing-bug-basketball/Server)
 
 #### 文档
 
-+ [E-R图](./figure/ER_Diagram.svg)
++ [E-R图](#er_diagram)
 + [DataBase](./DataBase.md)
 + 服务器的restful API规约
+
+#### ER_diagram
+![E-R图](./figure/ER_Diagram.svg)
