@@ -2,53 +2,77 @@
 
 
 ## /teacher/login/
-### post: 提交登录信息
+### post:提交登录信息
 * 传入数据格式
 ```
 {
-    "id": <教师 ID>,
-    
+    "id": <teacher ID>,
+    "password": <password>,
 }
 ```
 * 返回数据格式
 ```
+{
+    test_id:test_name
+}
+```
+## /teacher/question/
+### get:获取问题
+### post:添加新的问题
+* 传入数据格式
+```
+{
+    "stem": <题干>,
+    "options": [<选项内容>],
+    "answer": <选项内容>
+}
+```
+* 返回数据格式
+```
+{
+    "question_id": <题目ID>
+}
+```
+### delete:删除问题
+* 传入数据格式
+```
+{
+    "question_id": <题目ID>
+}
+```
+* 返回数据格式
+```
+{
+    "status": 200
+}
+```
+### put:修改问题
+* 传入数据格式
+```
+{
+    "question_id": <题目ID>
+    "stem": <题干>,
+    "options": [<选项内容>],
+    "answer": <选项内容>
+}
+```
+* 返回数据格式
+```
+{
+    "status": 200
+}
+```
+## /teacher/test_paper/
+```
 老师
-    teacher/login
-                {
-                    user_name
-                    password
-                }
-                {
-                    测验
-                }
+    teacher
             /question
-                post method 
-                {
-                    题目
-                    选项
-                    答案
-                }
-                {
-                    题目ID
-                }
-                delete method
-                {
-                    题目ID
-                }
-                200
                 get method
                 {
                    题目ID
                    题目
                    选项
                    答案 
-                }
-                put method
-                {
-                    题目ID
-                    题目
-                    选项
-                    答案
                 }
             /试卷
                 post method
