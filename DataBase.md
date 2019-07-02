@@ -10,10 +10,11 @@
 
 + question_id (primary key)
 + stem 题干内容
-+ answer 题目答案
++ option_id (foreign key)题目答案
 
 #### option 选项
 
++ option_id (primary key)
 + question_id (foreign key)
 + content 选项内容
 
@@ -28,8 +29,8 @@
 + test_id (primary key)
 + test_paper_id (foreign key)
 + title 测试名称(仅供学生查看)
-+ start_time 测试开始时间
-+ end_time 测试截止时间
++ start_time 测试开始时间 type: DateTime(YYYY-MM-DD HH:MM:SS)
++ end_time 测试截止时间 type: DateTime(YYYY-MM-DD HH:MM:SS)
 
 #### question_ownership 题目试卷所属关系
 
@@ -42,4 +43,4 @@
 + student_id (foreign key)
 + test_id (foreign key)
 + question_id (foreign key)
-+ selection 学生选择的答案
++ option_id (foreign key) 学生选择的答案
