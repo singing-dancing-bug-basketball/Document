@@ -10,11 +10,11 @@
 
 + question_id (primary key)
 + stem 题干内容
-+ option_id (foreign key)题目答案
++ selection_id (foreign key)题目答案
 
-#### option 选项
+#### selection 选项
 
-+ option_id (primary key)
++ selection_id (primary key)
 + question_id (foreign key)
 + content 选项内容
 
@@ -43,4 +43,4 @@
 + student_id (foreign key)
 + test_id (foreign key)
 + question_id (foreign key)
-+ option_id (foreign key) 学生选择的答案
++ selection_id (foreign key) 学生选择的答案
