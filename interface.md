@@ -13,7 +13,7 @@
 * 返回数据格式
 ```
 {
-    test_id:test_name
+    "status": 200
 }
 ```
 ## /teacher/question/
@@ -88,7 +88,7 @@ PS:
     "status": 200
 }
 ```
-### /teacher/question/list
+### /teacher/question/list/
 #### get:获取问题列表
 PS: 
 如果"page"缺失,默认返回第一页的内容(20个)
@@ -210,7 +210,7 @@ PS:
     "status": 200
 }
 ```
-### /teacher/test_paper/list
+### /teacher/test_paper/list/
 #### get:获取试卷列表
 PS: 
 如果"page"缺失,默认返回第一页的内容(20个)
@@ -236,7 +236,7 @@ PS:
     "status": 200
 }
 ```
-## /teacher/test
+## /teacher/test/
 ### get:获取某个测试题
 * 传入数据格式
 ```
@@ -303,7 +303,7 @@ PS: 存在的项覆盖,不存在的项不变,id不可缺
     "status": 200
 }
 ```
-### /teacher/test/list
+### /teacher/test/list/
 #### get:获取测试列表
 PS: 
 如果"page"缺失,默认返回第一页的内容(20个)
@@ -319,7 +319,7 @@ PS:
 {
     page: <integer range from 1 to infinite 当前页数>,
     "total_page": <integer range from 1 to infinite>,
-    [
+    "tests": [
         {
             "test_id": <测试ID>,
             "title": <测试名称>
@@ -327,3 +327,93 @@ PS:
     ]
 }
 ```
+
+## /teacher/record/
+### get:获取某次测试结果
+
+## /teacher/record/list/
+### get:获取测试结果列表
+
+## /teacher/student/
+### get:获取某个学生的信息
+### post:添加学生
+### put:修改学生信息
+### delete:删除学生
+
+# /student/
+
+## /student/login/
+### post:提交登录信息
+* 传入数据格式
+```
+{
+    "id": <student ID>,
+    "password": <password>,
+}
+```
+* 返回数据格式
+```
+{
+    "status": 200
+}
+```
+## /student/test/
+### get:获取某一次测试
+* 传入数据格式
+```
+{
+    "id": <student ID>,
+    "test_id": <测试ID>
+}
+```
+* 返回数据格式
+```
+{
+    "test_title": <string 测试名称>,
+    "duration": <integer 持续时间 range from 0 to infinite>,
+    "start_time": <测试开始时间(YYYY-MM-DD HH:MM:SS)>,
+    "end_time": <测试截止时间(YYYY-MM-DD HH:MM:SS)>,
+    "questions":[
+        {
+            "question_id": <question_ID>,
+            "stem": <题干>,
+            "selections": [
+                {
+                    "selection_id": <选项ID>,
+                    "content": <选项内容>
+                }
+            ],
+            "answer": <选项ID>,
+            "score": <score is an integer range from 0 to 100>
+        }
+    ]
+}
+```
+## /student/test/list/
+### get:获取学生的测试列表
+* 传入数据格式
+```
+{
+    "id": <student ID>
+}
+```
+* 返回数据格式
+```
+{
+    "tests": [
+        {
+            "test_id": <测试ID>,
+            "title": <测试名称>,
+            "duration": <integer 持续时间 range from 0 to infinite>,
+            "start_time": <测试开始时间(YYYY-MM-DD HH:MM:SS)>,
+            "end_time": <测试截止时间(YYYY-MM-DD HH:MM:SS)>,
+        }
+    ]
+}
+```
+## /student/record/
+### get:获取某次测试结果
+### post:学生提交测试结果
+
+## /student/record/list/
+### get:获取测试结果列表
