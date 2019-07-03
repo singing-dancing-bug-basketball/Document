@@ -29,8 +29,10 @@
 {
     "stem": <题干>,
     "options": [
-        "selection_id": <选项ID>,
-        "content": <选项内容>
+        {
+            "selection_id": <选项ID>,
+            "content": <选项内容>
+        }
     ],
     "answer": <答案选项的ID>
 }
@@ -85,7 +87,7 @@
 }
 ```
 ### /teacher/question/list
-get 返回问题列表
+#### get:返回问题列表
 PS: 
 如果"page"缺失,默认返回第一页的内容(20个)
 如果指定的"page">最大页数,则返回最后一页的内容
@@ -198,7 +200,7 @@ PS:
 }
 ```
 ### /teacher/test_paper/list
-get:获取问题列表
+#### get:获取问题列表
 PS: 
 如果"page"缺失,默认返回第一页的内容(20个)
 如果指定的"page">最大页数,则返回最后一页的内容

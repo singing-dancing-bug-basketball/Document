@@ -14,7 +14,7 @@ The project consists of three applications:
 
 + [E-R diagram](#er_diagram)
 + [DataBase](./DataBase.md)
-+ Definition of server's restful API
++ [Definition of server's restful API](./interface.md)
 
 ### 项目实训(移动互联)
 
@@ -32,7 +32,7 @@ The project consists of three applications:
 
 + [E-R图](#er_diagram)
 + [DataBase](./DataBase.md)
-+ 服务器的restful API规约
++ [服务器的restful API规约](./interface.md)
 
 #### ER_diagram
 ![E-R图](./figure/ER_Diagram.svg)
