@@ -353,7 +353,7 @@ PS:
 * 返回数据格式
 ```
 {
-    "test_title": <string 测试名称>,
+    "title": <string 测试名称>,
     "duration": <integer 持续时间 range from 0 to infinite>,
     "start_time": <测试开始时间(YYYY-MM-DD HH:MM:SS)>,
     "end_time": <测试截止时间(YYYY-MM-DD HH:MM:SS)>,
@@ -370,6 +370,7 @@ PS:
 ```
 ## /student/test/list/
 ### get:获取学生的测试列表
+PS: 此API表示获取学生可以参加但还未参加的测试列表
 * 传入数据格式
 ```
 {
@@ -395,11 +396,69 @@ PS:
 * 传入数据格式
 ```
 {
-    
+    "student_id": <student id>,
+    "test_id": <测试ID>
 }
 ```
 * 返回数据格式
+```
+{
+    "title": <string 测试名称>,
+    "duration": <integer 持续时间 range from 0 to infinite>,
+    "start_time": <测试开始时间(YYYY-MM-DD HH:MM:SS)>,
+    "end_time": <测试截止时间(YYYY-MM-DD HH:MM:SS)>,
+    "questions":[
+        {
+            "question_id": <question_ID>,
+            "stem": <题干>,
+            "selections": [<string 选项内容>],
+            "selection": <integer range from 1 to 4 or more 学生提交的答案>
+            "answer": <integer range from 1 to 4 or more>,
+            "score": <score is an integer range from 0 to 100>
+        }
+    ]
+}
+```
 ### post:学生提交测试结果
-
+* 传入数据格式
+```
+{
+    "student_id": <student id>,
+    "test_id": <测试ID>,
+    "selections": [
+        {
+            "question_id": <问题ID>,
+            "selection": <integer range from 1 to 4 or more 学生提交的答案>
+        }
+    ]
+}
+```
+* 返回数据格式
+```
+{
+    "status": 200
+}
+```
 ## /student/record/list/
 ### get:获取测试结果列表
+PS: 此API表示获取学生已经参加的测试列表
+* 传入数据格式
+```
+{
+    "student_id": <student id>
+}
+```
+* 返回数据格式
+```
+{
+    "tests": [
+        {
+            "test_id": <测试ID>,
+            "title": <测试名称>,
+            "start_time": <测试开始日期>,
+            "end_time": <测试结束日期>,
+            "duration": <测试持续时间>
+        }
+    ]
+}
+```
