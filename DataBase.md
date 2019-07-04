@@ -10,13 +10,8 @@
 
 + question_id (primary key)
 + stem 题干内容
-+ selection_id (foreign key)题目答案
-
-#### selection 选项
-
-+ selection_id (primary key)
-+ question_id (foreign key)
-+ content 选项内容
++ selections (string) 使用某个分隔符切分选项
++ answer 题目答案
 
 #### test_paper 试卷
 
@@ -43,4 +38,4 @@
 + student_id (foreign key)
 + test_id (foreign key)
 + question_id (foreign key)
-+ selection_id (foreign key) 学生选择的答案
++ selection 学生选择的答案

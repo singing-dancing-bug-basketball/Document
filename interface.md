@@ -29,12 +29,9 @@
 {
     "stem": <题干>,
     "selections": [
-        {
-            "selection_id": <选项ID>,
-            "content": <选项内容>
-        }
+        <选项内容 string>
     ],
-    "answer": <答案选项的ID>
+    "answer": <integer range from 1 to 4 or more>
 }
 ```
 ### post:添加新的问题
@@ -73,13 +70,10 @@ PS:
 {
     "question_id": <题目ID>
     "stem": <题干>,
-    "selections": [
-        {
-            "selection_id": <选项ID>,
-            "content": <选项内容>
-        }
-    ],
-    "answer": <选项ID>
+    "selections": {
+        "id": <string 选项内容> // id range from 1 to 4 or more, means A,B,C,D and etc.
+    },
+    "answer": <integer range from 1 to 4>
 }
 ```
 * 返回数据格式
@@ -108,13 +102,8 @@ PS:
         {
             "question_id": <题目ID>,
             "stem": <题干>,
-            "selections": [
-                {
-                    "selection_id": <选项ID>,
-                    "content": <选项内容>
-                }
-            ],
-            "answer": <选项ID>
+            "selections": [<string 选项内容>],
+            "answer": <integer range from 1 to 4>
         }
     ]
 }
@@ -136,13 +125,8 @@ PS:
         {
             "question_id": <question_ID>,
             "stem": <题干>,
-            "selections": [
-                {
-                    "selection_id": <选项ID>,
-                    "content": <选项内容>
-                }
-            ],
-            "answer": <选项ID>,
+            "selections": [<string 选项内容>],
+            "answer": <integer range from 1 to 4>,
             "score": <score is an integer range from 0 to 100>
         }
     ]
@@ -377,13 +361,8 @@ PS:
         {
             "question_id": <question_ID>,
             "stem": <题干>,
-            "selections": [
-                {
-                    "selection_id": <选项ID>,
-                    "content": <选项内容>
-                }
-            ],
-            "answer": <选项ID>,
+            "selections": [<string 选项内容>],
+            "answer": <integer range from 1 to 4>,
             "score": <score is an integer range from 0 to 100>
         }
     ]
@@ -413,6 +392,13 @@ PS:
 ```
 ## /student/record/
 ### get:获取某次测试结果
+* 传入数据格式
+```
+{
+    
+}
+```
+* 返回数据格式
 ### post:学生提交测试结果
 
 ## /student/record/list/
