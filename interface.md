@@ -120,7 +120,7 @@ PS:
 ```
 {   
     "title": <试卷名称>,
-    "duration": <integer 持续时间 range from 0 to infinite>,
+    "duration": <integer 持续时间 range from 0 to infinite, unit: minute>,
     "questions":[
         {
             "question_id": <question_ID>,
@@ -137,7 +137,7 @@ PS:
 ```
 {
     "title": <试卷名称>,
-    "duration": <integer 持续时间 range from 0 to infinite>,
+    "duration": <integer 持续时间 range from 0 to infinite, unit: minute>,
     questions:[
         "question_id": <question_ID>,
         "score": <score is an integer range from 0 to 100>
@@ -178,7 +178,7 @@ PS:
 {
     "test_paper_id": <试卷的ID>,
     "title": <string 试卷名称>,
-    "duration": <integer 持续时间 range from 0 to infinite>,
+    "duration": <integer 持续时间 range from 0 to infinite, unit: minute>,
     "questions" :[
         "question_id": <question_ID>,
         "score": <score is an integer range from 0 to 100>
@@ -214,7 +214,7 @@ PS:
         {
             "test_paper_id": <试卷ID>,
             "title": <试卷名称>,
-            "duration": <integer 持续时间 range from 0 to infinite>
+            "duration": <integer 持续时间 range from 0 to infinite, unit: minute>
         }
     ]
     "status": 200
@@ -233,7 +233,7 @@ PS:
 {
     "test_title": <string 测试名称>,
     "test_paper_time": <string 试卷名称>,
-    "duration": <integer 持续时间 range from 0 to infinite>,
+    "duration": <integer 持续时间 range from 0 to infinite, unit: minute>,
     "start_time": <测试开始时间(YYYY-MM-DD HH:MM:SS)>,
     "end_time": <测试截止时间(YYYY-MM-DD HH:MM:SS)>,
     "test_paper_id": <试卷ID>
@@ -314,16 +314,110 @@ PS:
 
 ## /teacher/record/
 ### get:获取某次测试结果
-
-## /teacher/record/list/
-### get:获取测试结果列表
-
+* 传入数据格式
+```
+{
+    "test_id": <测试ID>
+}
+```
+* 返回数据格式
+```
+{
+    "title": <测试名称>,
+    "students_num": <integer 参加考试的学生人数>,
+    "student_average": <float 平均分>,
+    "students": [
+        {
+            "student_id": <student的ID>,
+            "student_name": <学生姓名>,
+            "score": <学生的最终成绩>
+        }
+    ]
+}
+```
 ## /teacher/student/
 ### get:获取某个学生的信息
+* 传入数据格式
+```
+{
+    "student_id": <学生ID>
+}
+```
+* 返回数据格式
+```
+{
+    "student_id": <学生ID>,
+    "name": <学生姓名>
+}
+```
 ### post:添加学生
+* 传入数据格式
+```
+{
+    "student_id": <老师指定的学生学号>
+    "name": <学生姓名>,
+    "password": <密码>
+}
+```
+* 返回数据格式
+```
+{
+    "status": 200
+}
+```
 ### put:修改学生信息
+PS: 存在的项覆盖,不存在的项不变,id不可缺
+* 传入数据格式
+```
+{
+    "student_id": <学生ID>,
+    "name": <学生姓名>,
+    "password": <密码>
+}
+```
+* 返回数据格式
+```
+{
+    "status": 200
+}
+```
 ### delete:删除学生
-
+* 传入数据格式
+```
+{
+    "student_id": <学生ID>
+}
+```
+* 返回数据格式
+```
+{
+    "status": 200
+}
+```
+## /teacher/student/list/
+### get:获取学生的列表
+PS: 
+如果"page"缺失,默认返回第一页的内容(20个)
+如果指定的"page">最大页数,则返回最后一页的内容
+* 传入数据格式
+```
+{
+    "page": <integer range from 1 to infinite>
+}
+```
+* 返回数据格式
+```
+{
+    page: <integer range from 1 to infinite 当前页数>,
+    "total_page": <integer range from 1 to infinite>,
+    "students": [
+        {
+            "student_id": <学生ID>,
+            "name": <学生名字>
+        }
+    ]
+}
+```
 # /student/
 
 ## /student/login/
@@ -354,7 +448,7 @@ PS:
 ```
 {
     "title": <string 测试名称>,
-    "duration": <integer 持续时间 range from 0 to infinite>,
+    "duration": <integer 持续时间 range from 0 to infinite, unit: minute>,
     "start_time": <测试开始时间(YYYY-MM-DD HH:MM:SS)>,
     "end_time": <测试截止时间(YYYY-MM-DD HH:MM:SS)>,
     "questions":[
@@ -384,7 +478,7 @@ PS: 此API表示获取学生可以参加但还未参加的测试列表
         {
             "test_id": <测试ID>,
             "title": <测试名称>,
-            "duration": <integer 持续时间 range from 0 to infinite>,
+            "duration": <integer 持续时间 range from 0 to infinite, unit: minute>,
             "start_time": <测试开始时间(YYYY-MM-DD HH:MM:SS)>,
             "end_time": <测试截止时间(YYYY-MM-DD HH:MM:SS)>,
         }
@@ -404,7 +498,7 @@ PS: 此API表示获取学生可以参加但还未参加的测试列表
 ```
 {
     "title": <string 测试名称>,
-    "duration": <integer 持续时间 range from 0 to infinite>,
+    "duration": <integer 持续时间 range from 0 to infinite, unit: minute>,
     "start_time": <测试开始时间(YYYY-MM-DD HH:MM:SS)>,
     "end_time": <测试截止时间(YYYY-MM-DD HH:MM:SS)>,
     "questions":[
