@@ -10,7 +10,7 @@
 
 + question_id (primary key)
 + stem 题干内容
-+ selections (string) 使用某个分隔符切分选项
++ selections (string) 使用某个分隔符  @caixunkun@  切分选项
 + answer 题目答案
 
 #### test_paper 试卷
