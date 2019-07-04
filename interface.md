@@ -1,8 +1,35 @@
+# Directory
+## /teacher/ API for browser
+* [/teacher/login/](#/teacher/login/)
+  * [post:提交登录信息](#login-post)
+* [/teacher/question/](#/teacher/question/)
+  * [get:获取某个问题](#question-get)
+  * [post:添加新的问题](#question-post)
+  * [delete:删除问题](#question-delete)
+  * [put:修改问题](#question-put)
+* [/teacher/question/list/](#/teacher/question/list/)
+  * [get:获取问题列表](#question-list-get)
+* [/teacher/test_paper/](#/teacher/test_paper/)
+  * [get:获取某张试卷](#test_paper-get)
+  * [post:添加新的试卷](#test_paper-post)
+  * [delete:删除试卷](#test_paper-delete)
+  * [put:修改试卷](#test_paper-put)
+* [/teacher/test_paper/list/](#/teacher/test_paper/list/)
+* [/teacher/test/](#/teacher/test/)
+* [/teacher/test/list/](#/teacher/test/list/)
+* [/teacher/record/](#/teacher/record/)
+* [/teacher/student/](#/teacher/student/)
+* [/teacher/student/list/](#/teacher/student/list/)
+## /student/ API for Android
+* /student/login/
+* /student/test/
+* /student/test/list/
+* /student/record/
+* /student/record/list/
+
 # /teacher/
-
-
-## /teacher/login/
-### post:提交登录信息
+<h2 id="/teacher/login/">/teacher/login/</h2>
+<h3 id="login-post">post:提交登录信息</h3>
 * 传入数据格式
 ```
 {
@@ -16,8 +43,8 @@
     "status": 200
 }
 ```
-## /teacher/question/
-### get:获取某个问题
+<h2 id="/teacher/question/">/teacher/question/</h2>
+<h3 id="question-get">get:获取某个问题</h3>
 * 传入数据格式
 ```
 {
@@ -34,7 +61,7 @@
     "answer": <integer range from 1 to 4 or more>
 }
 ```
-### post:添加新的问题
+<h3 id="question-post">post:添加新的问题</h3>
 * 传入数据格式
 ```
 {
@@ -49,7 +76,7 @@
     "question_id": <题目ID>
 }
 ```
-### delete:删除问题
+<h3 id="question-delete">delete:删除问题</h3>
 * 传入数据格式
 ```
 {
@@ -62,7 +89,7 @@
     "status": 200
 }
 ```
-### put:修改问题
+<h3 id="question-put">put:修改问题</h3>
 PS:
 存在的项覆盖,不存在的项不变,id不可缺
 * 传入数据格式
@@ -82,8 +109,8 @@ PS:
     "status": 200
 }
 ```
-### /teacher/question/list/
-#### get:获取问题列表
+<h2 id="/teacher/question/list/">/teacher/question/list/</h2>
+<h3 id="question-list-get">get:获取问题列表</h3>
 PS: 
 如果"page"缺失,默认返回第一页的内容(20个)
 如果指定的"page">最大页数,则返回最后一页的内容
@@ -108,8 +135,8 @@ PS:
     ]
 }
 ```
-## /teacher/test_paper/
-### get:获取某张试卷
+<h2 id="/teacher/test_paper/">/teacher/test_paper/</h2>
+<h3 id="test_paper-get">get:获取某张试卷</h3>
 * 传入数据格式
 ```
 {
@@ -132,7 +159,7 @@ PS:
     ]
 }
 ```
-### post:添加新的试卷
+<h3 id="test_paper-post">post:添加新的试卷</h3>
 * 传入数据格式
 ```
 {
@@ -150,7 +177,7 @@ PS:
     "test_paper_id": <试卷ID>
 }
 ```
-### delete:删除试卷
+<h3 id="test_paper-delete">delete:删除试卷</h3>
 * 传入数据格式
 ```
 {
@@ -163,7 +190,7 @@ PS:
     "status": 200
 }
 ```
-### put:修改试卷
+<h3 id="test_paper-put">put:修改试卷</h3>
 PS:
 + 放在"questions"中的题目: 
 如果传入的题目是原本试卷已经存在的,则覆盖已有题目的分数
@@ -194,8 +221,8 @@ PS:
     "status": 200
 }
 ```
-### /teacher/test_paper/list/
-#### get:获取试卷列表
+<h2 id="/teacher/test_paper/list/">/teacher/test_paper/list/</h2>
+<h3 id="test_paper-list-get">get:获取试卷列表</h3>
 PS: 
 如果"page"缺失,默认返回第一页的内容(20个)
 如果指定的"page">最大页数,则返回最后一页的内容
@@ -220,8 +247,8 @@ PS:
     "status": 200
 }
 ```
-## /teacher/test/
-### get:获取某个测试题
+<h2 id="/teacher/test/">/teacher/test/</h2>
+<h3 id="test-get">get:获取某个测试题</h3>
 * 传入数据格式
 ```
 {
@@ -239,7 +266,7 @@ PS:
     "test_paper_id": <试卷ID>
 }
 ```
-### post:添加新的测试
+<h3 id="test-post">post:添加新的测试</h3>
 * 传入数据格式
 ```
 {
@@ -256,7 +283,7 @@ PS:
     "status": 200
 }
 ```
-### delete:删除某个测试
+<h3 id="test-delete">delete:删除某个测试</h3>
 * 传入数据格式
 ```
 {
@@ -269,7 +296,7 @@ PS:
     "status": 200
 }
 ```
-### put:修改某次测试
+<h3 id="test-put">put:修改某次测试</h3>
 PS: 存在的项覆盖,不存在的项不变,id不可缺
 * 传入数据格式
 ```
@@ -287,8 +314,8 @@ PS: 存在的项覆盖,不存在的项不变,id不可缺
     "status": 200
 }
 ```
-### /teacher/test/list/
-#### get:获取测试列表
+<h2 id="/teacher/test/list/">/teacher/test/list/</h2>
+<h3 id="test-list-get">get:获取测试列表</h3>
 PS: 
 如果"page"缺失,默认返回第一页的内容(20个)
 如果指定的"page">最大页数,则返回最后一页的内容
@@ -311,9 +338,8 @@ PS:
     ]
 }
 ```
-
-## /teacher/record/
-### get:获取某次测试结果
+<h2 id="/teacher/record/">/teacher/record/</h2>
+<h3 id="record-get">get:获取某次测试结果</h3>
 * 传入数据格式
 ```
 {
@@ -335,8 +361,8 @@ PS:
     ]
 }
 ```
-## /teacher/student/
-### get:获取某个学生的信息
+<h2 id="/teacher/student/">/teacher/student/</h2>
+<h3 id="student-get">get:获取某个学生的信息</h3>
 * 传入数据格式
 ```
 {
@@ -350,7 +376,7 @@ PS:
     "name": <学生姓名>
 }
 ```
-### post:添加学生
+<h3 id="student-post">post:添加学生</h3>
 * 传入数据格式
 ```
 {
@@ -365,7 +391,7 @@ PS:
     "status": 200
 }
 ```
-### put:修改学生信息
+<h3 id="student-put">put:修改学生信息</h3>
 PS: 存在的项覆盖,不存在的项不变,id不可缺
 * 传入数据格式
 ```
@@ -381,7 +407,7 @@ PS: 存在的项覆盖,不存在的项不变,id不可缺
     "status": 200
 }
 ```
-### delete:删除学生
+<h3 id="student-delete">delete:删除学生</h3>
 * 传入数据格式
 ```
 {
@@ -394,8 +420,8 @@ PS: 存在的项覆盖,不存在的项不变,id不可缺
     "status": 200
 }
 ```
-## /teacher/student/list/
-### get:获取学生的列表
+<h2 id="/teacher/student/list/">/teacher/student/list/</h2>
+<h3 id="student-list-get">get:获取学生的列表</h3>
 PS: 
 如果"page"缺失,默认返回第一页的内容(20个)
 如果指定的"page">最大页数,则返回最后一页的内容
@@ -419,9 +445,8 @@ PS:
 }
 ```
 # /student/
-
-## /student/login/
-### post:提交登录信息
+<h2 id="/student/login/">/student/login/</h2>
+<h3 id="student-login">post:提交登录信息</h3>
 * 传入数据格式
 ```
 {
@@ -435,8 +460,8 @@ PS:
     "status": 200
 }
 ```
-## /student/test/
-### get:获取某一次测试
+<h2 id="/student/test/">/student/test/</h2>
+<h3 id="student-test-get">get:获取某一次测试</h3>
 * 传入数据格式
 ```
 {
@@ -462,8 +487,8 @@ PS:
     ]
 }
 ```
-## /student/test/list/
-### get:获取学生的测试列表
+<h2 id="/student/test/list/">/student/test/list/</h2>
+<h3 id="student-test-list-get">get:获取学生的测试列表</h3>
 PS: 此API表示获取学生可以参加但还未参加的测试列表
 * 传入数据格式
 ```
@@ -485,8 +510,8 @@ PS: 此API表示获取学生可以参加但还未参加的测试列表
     ]
 }
 ```
-## /student/record/
-### get:获取某次测试结果
+<h2 id="/student/record/">/student/record/</h2>
+<h3 id="student-record-get">get:获取某次测试结果</h3>
 * 传入数据格式
 ```
 {
@@ -513,7 +538,7 @@ PS: 此API表示获取学生可以参加但还未参加的测试列表
     ]
 }
 ```
-### post:学生提交测试结果
+<h3 id="student-test-post">post:学生提交测试结果</h3>
 * 传入数据格式
 ```
 {
@@ -533,8 +558,8 @@ PS: 此API表示获取学生可以参加但还未参加的测试列表
     "status": 200
 }
 ```
-## /student/record/list/
-### get:获取测试结果列表
+<h2 id="/student/record/list/">/student/record/list/</h2>
+<h3 id="student-record-list-get">get:获取测试结果列表</h3>
 PS: 此API表示获取学生已经参加的测试列表
 * 传入数据格式
 ```
