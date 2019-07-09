@@ -547,9 +547,10 @@ PS: 此API表示获取学生可以参加但还未参加的测试列表
             "test_id": <测试ID>,
             "title": <测试名称>,
             "total_score": <测试总分>,
+            "num_questions": <总题数>,
             "duration": <integer 持续时间 range from 0 to infinite, unit: minute>,
             "start_time": <测试开始时间(YYYY-MM-DD HH:MM:SS)>,
-            "end_time": <测试截止时间(YYYY-MM-DD HH:MM:SS)>,
+            "end_time": <测试截止时间(YYYY-MM-DD HH:MM:SS)>
         }
     ]
 }
