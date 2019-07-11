@@ -595,6 +595,8 @@ PS: 此API表示获取学生已经参加的测试列表
             "title": <测试名称>,
             "start_time": <测试开始日期>,
             "end_time": <测试结束日期>,
+            "user_score": <用户得分>,
+            "total_score": <测试总分>,
             "duration": <测试持续时间>
         }
     ]
