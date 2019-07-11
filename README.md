@@ -12,9 +12,11 @@ The project consists of three applications:
 
 #### Document
 
++ [Requirement](./Requirement.md)
 + [E-R diagram](#er_diagram)
 + [DataBase](./DataBase.md)
-+ [Definition of server's restful API](./interface.md)
++ [Definition of server's restful API](./Interface.md)
++ [Schedule](./Schedule.md)
 
 ### 项目实训(移动互联)
 
@@ -30,9 +32,11 @@ The project consists of three applications:
 
 #### 文档
 
++ [需求](./Requirement.md)
 + [E-R图](#er_diagram)
 + [DataBase](./DataBase.md)
-+ [服务器的restful API规约](./interface.md)
++ [服务器的restful API规约](./Interface.md)
++ [时间表](./Schedule.md)
 
 #### ER_diagram
 ![E-R图](./figure/ER_Diagram.svg)
