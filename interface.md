@@ -67,9 +67,7 @@
 
 * 传入数据格式
 ```
-{
-    "question_id": <题目ID>
-}
+<question_id(题目ID)>
 ```
 * 返回数据格式
 ```
@@ -140,9 +138,7 @@ PS:
 如果指定的"page">最大页数,则返回最后一页的内容
 * 传入数据格式
 ```
-{
-    "page": <integer range from 1 to infinite>
-}
+<page, an integer range from 1 to infinite>
 ```
 * 返回数据格式
 ```
@@ -164,9 +160,7 @@ PS:
 
 * 传入数据格式
 ```
-{
-    "test_paper": <试卷ID>
-}
+<test_paper(试卷ID)>
 ```
 * 返回数据格式
 ```
@@ -257,9 +251,7 @@ PS:
 如果指定的"page">最大页数,则返回最后一页的内容
 * 传入数据格式
 ```
-{
-    "page": <integer range from 1 to infinite>
-}
+<page, an integer range from 1 to infinite>
 ```
 * 返回数据格式
 ```
@@ -281,9 +273,7 @@ PS:
 
 * 传入数据格式
 ```
-{
-    "test_id": <测试ID>
-}
+<test_id(测试ID)>
 ```
 * 返回数据格式
 ```
@@ -355,9 +345,7 @@ PS:
 如果指定的"page">最大页数,则返回最后一页的内容
 * 传入数据格式
 ```
-{
-    "page": <integer range from 1 to infinite>
-}
+<page, an integer range from 1 to infinite>
 ```
 * 返回数据格式
 ```
@@ -377,9 +365,7 @@ PS:
 
 * 传入数据格式
 ```
-{
-    "test_id": <测试ID>
-}
+<test_id(测试ID)>
 ```
 * 返回数据格式
 ```
@@ -401,9 +387,7 @@ PS:
 
 * 传入数据格式
 ```
-{
-    "student_id": <学生ID>
-}
+<student_id(学生ID)>
 ```
 * 返回数据格式
 ```
@@ -467,9 +451,7 @@ PS:
 如果指定的"page">最大页数,则返回最后一页的内容
 * 传入数据格式
 ```
-{
-    "page": <integer range from 1 to infinite>
-}
+<page, an integer range from 1 to infinite>
 ```
 * 返回数据格式
 ```
@@ -506,10 +488,7 @@ PS:
 
 * 传入数据格式
 ```
-{
-    "id": <student ID>,
-    "test_id": <测试ID>
-}
+<test_id(测试ID)>
 ```
 * 返回数据格式
 ```
@@ -534,9 +513,7 @@ PS:
 PS: 此API表示获取学生可以参加但还未参加的测试列表
 * 传入数据格式
 ```
-{
-    "id": <student ID>
-}
+<student ID>
 ```
 * 返回数据格式
 ```
@@ -559,10 +536,7 @@ PS: 此API表示获取学生可以参加但还未参加的测试列表
 
 * 传入数据格式
 ```
-{
-    "student_id": <student id>,
-    "test_id": <测试ID>
-}
+student_id=<student id>&test_id=<测试ID>
 ```
 * 返回数据格式
 ```
@@ -610,9 +584,7 @@ PS: 此API表示获取学生可以参加但还未参加的测试列表
 PS: 此API表示获取学生已经参加的测试列表
 * 传入数据格式
 ```
-{
-    "student_id": <student id>
-}
+<student id>
 ```
 * 返回数据格式
 ```
