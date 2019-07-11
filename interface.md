@@ -523,7 +523,6 @@ PS:
             "question_id": <question_ID>,
             "stem": <题干>,
             "selections": [<string 选项内容>],
-            "answer": <integer range from 1 to 4>,
             "score": <score is an integer range from 0 to 100>
         }
     ]
